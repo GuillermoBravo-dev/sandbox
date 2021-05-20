@@ -62,7 +62,7 @@ const InputSB = ({ loading, options, requests, onClickFunction, placeholder }) =
     );
 
     // updateValue: Esta función es la encargada de setear el nuevo valor del Input y enviar esos valores como peticiones al Backend
-    const updateValue = (newValue) => {
+    const onChange = (newValue) => {
         setInputValue(newValue);
         debouncedSave(newValue);
     };
@@ -71,7 +71,7 @@ const InputSB = ({ loading, options, requests, onClickFunction, placeholder }) =
         <div>
             <Input
                 value={inputValue}
-                onChange={(input) => updateValue(input.target.value)}
+                onChange={(input) => onChange(input.target.value)}
                 placeholder={placeholder}
             />
             <SuggestContainer>
